@@ -6,75 +6,14 @@ categories: jekyll update
 
 
 
-<div id="typewriter"></div>
 <h3>자막</h3>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const text = `그런데 새로운 방법으로 등장해요. 원격 교육은 일단 기본적으로 매체를 쓰긴 하지만 일단은 매체를 써서 학습자랑 교수자가 떨어져 있는 컨셉이에요. 일반적으로 블렌디드 러닝은 블렌디드 라는게 믹스했다 섞었다는 의미잖아요.
+<div id="subtitle-box" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 1rem;"></div>
 
-온오프라인을 섞습니다. 근데 뭐냐면 이런 컨셉이에요. 그냥 무조건 섞으면 되냐? 아닙니다.
-
-면대면 학습과 온라인 학습을 의도적으로 결합해야 돼요. 의도적인 게 중요한 거예요. 왜 의도적으로 하냐? 그냥 하나만 하지.
-
-뭐 하루 두 개 하냐 하는데 각각의 방식이 장점이 있습니다. 분명히 장점이 있어요. 예를 들어서 오프라인 강의는 돌려볼 수 있습니까? 못 본단 말이에요.
-
-시간을 돌릴 수 없잖아요. 못 돌리니까. 온라인 강의는 보다가 이렇게 돌릴 수도 있고.
-
-교수님이 좀 약간 말씀 느리시다. 그러면 1.5배 이렇게 하시잖아요. 심지어 2배속 하는 분들도 있고.
-
-그래서 그런 식으로`;
-
-    const container = document.getElementById("typewriter");
-    let i = 0;
-
-    function typeNext() {
-      if (i < text.length) {
-        container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
-        i++;
-        setTimeout(typeNext, 30);
-      }
-    }
-
-    typeNext();
-  });
-</script>
-
-<style>
-  #typewriter {
-    font-family: 'Courier New', monospace;
-    font-size: 1.2rem;
-    white-space: pre-wrap;
-    word-break: break-word;
-    line-height: 1.8;
-    color: black;
-    height: 200px;
-    overflow: auto;
-  }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="typewriter" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 1rem;"></div>
 <h3>요약</h3>
+<div id="summary-box" style="height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 1rem;"></div>
 
 <style>
-  #typewriter {
+  #subtitle-box, #summary-box {
     font-family: 'Courier New', monospace;
     font-size: 1.1rem;
     white-space: pre-wrap;
@@ -98,12 +37,42 @@ categories: jekyll update
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // ✅ 자막 텍스트 (타이핑 효과)
+    const subtitleText = `그런데 새로운 방법으로 등장해요. 원격 교육은 기본적으로 매체를 써서 학습자랑 교수자가 떨어져 있는 컨셉이에요. 일반적으로 블렌디드 러닝은 블렌디드 라는 게 믹스했다 섞었다는 의미잖아요.
+
+온오프라인을 섞습니다. 근데 뭐냐면 이런 컨셉이에요. 그냥 무조건 섞으면 되냐? 아닙니다.
+
+면대면 학습과 온라인 학습을 의도적으로 결합해야 돼요. 의도적인 게 중요한 거예요. 왜 의도적으로 하냐? 그냥 하나만 하지.
+
+뭐 하루 두 개 하냐 하는데 각각의 방식이 장점이 있습니다. 예를 들어서 오프라인 강의는 돌려볼 수 있습니까? 못 본단 말이에요.
+
+시간을 돌릴 수 없잖아요. 못 돌리니까. 온라인 강의는 보다가 이렇게 돌릴 수도 있고.
+
+교수님이 좀 약간 말씀 느리시다. 그러면 1.5배 이렇게 하시잖아요. 심지어 2배속 하는 분들도 있고.
+
+그래서 그런 식으로`;
+
+    const subtitleBox = document.getElementById("subtitle-box");
+    let i = 0;
+
+    function typeNext() {
+      if (i < subtitleText.length) {
+        subtitleBox.innerHTML += subtitleText[i] === '\n' ? '<br>' : subtitleText[i];
+        i++;
+        subtitleBox.scrollTop = subtitleBox.scrollHeight;
+        setTimeout(typeNext, 30);
+      }
+    }
+
+    typeNext();
+
+    // ✅ 요약 텍스트 (5초 간격 덩어리 출력)
     const textChunks = [
-'원격 교육은 매체를 활용해 교수자와 학습자가 떨어진 상태에서 진행되며, 블렌디드 러닝은 온라인과 오프라인 학습을 의도적으로 결합하는 방식이다.',
+      '원격 교육은 매체를 활용해 교수자와 학습자가 떨어진 상태에서 진행되며, 블렌디드 러닝은 온라인과 오프라인 학습을 의도적으로 결합하는 방식이다.',
       '각각의 방식은 되돌려보기, 실시간 상호작용 등 고유한 장점이 있으며, 이를 조화롭게 활용하는 것이 중요하다.'
     ];
 
-    const container = document.getElementById("typewriter");
+    const summaryBox = document.getElementById("summary-box");
     let currentIndex = 0;
 
     function showNextChunk() {
@@ -111,13 +80,13 @@ categories: jekyll update
         const p = document.createElement("p");
         p.className = "chunk";
         p.textContent = textChunks[currentIndex];
-        container.appendChild(p);
-        container.scrollTop = container.scrollHeight; // 스크롤 아래로 자동 이동
+        summaryBox.appendChild(p);
+        summaryBox.scrollTop = summaryBox.scrollHeight;
         currentIndex++;
-        setTimeout(showNextChunk, 5000); // 5초 간격
+        setTimeout(showNextChunk, 5000); // 5초 후 다음 덩어리
       }
     }
 
-    showNextChunk(); // 시작
+    showNextChunk();
   });
 </script>
