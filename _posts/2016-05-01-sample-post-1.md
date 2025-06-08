@@ -4,7 +4,9 @@ title:  "Sample Post - test"
 categories: jekyll update
 ---
 
-<div id="typewriter"></div>
+
+
+<div id="typewriter" style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 1rem;"></div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -27,8 +29,15 @@ categories: jekyll update
 
     function typeNext() {
       if (i < text.length) {
+        const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 5;
+
         container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
         i++;
+
+        if (isAtBottom) {
+          container.scrollTop = container.scrollHeight; // 자동 스크롤
+        }
+
         setTimeout(typeNext, 30);
       }
     }
@@ -40,12 +49,10 @@ categories: jekyll update
 <style>
   #typewriter {
     font-family: 'Courier New', monospace;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     white-space: pre-wrap;
     word-break: break-word;
     line-height: 1.8;
     color: black;
-    height: 200px;
-    overflow: auto;
   }
 </style>
