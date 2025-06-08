@@ -5,7 +5,7 @@ categories: jekyll update
 ---
 
 
-<div>
+<div id="container">
   <h2> 자막 </h2>
   <div id="typewriter_subscript"></div>
 </div>
@@ -59,7 +59,7 @@ categories: jekyll update
 
 
 
-<div>
+<div id="container">
   <h2> 요약 </h2>
   <div id="typewriter_summary"></div>
 </div>
@@ -75,9 +75,9 @@ categories: jekyll update
 
     function typeNext() {
       if (i < texts.length) {
-        container.innerHTML += texts[i] === '\n' ? '<br>' : texts[i];
+        container.innerHTML += texts[i] === '\n\n\n' ? '<br>' : texts[i];
         i++;
-        setTimeout(typeNext, 8000);
+        setTimeout(typeNext, 10000);
       }
     }
 
@@ -96,6 +96,9 @@ categories: jekyll update
     height: 200px;
     overflow: auto;
     border: 1px solid black;
-    margin-top: 20px;
+    margin-top: 5px;
+  }
+  #container{
+    margin-top: 30px;
   }
 </style>
