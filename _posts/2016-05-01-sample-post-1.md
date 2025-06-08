@@ -6,19 +6,9 @@ categories: jekyll update
 
 <div id="typewriter"></div>
 
-<style>
-#typewriter {
-  font-family: 'Courier New', monospace;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  white-space: pre-wrap;   /* 줄바꿈 자동 반영 */
-  word-break: break-word;  /* 긴 단어 줄바꿈 */
-  color: black;
-}
-</style>
-
 <script>
-const text = `그런데 새로운 방법으로 등장해요. 원격 교육은 일단 기본적으로 매체를 쓰긴 하지만 일단은 매체를 써서 학습자랑 교수자가 떨어져 있는 컨셉이에요. 일반적으로 블렌디드 러닝은 블렌디드 라는게 믹스했다 섞었다는 의미잖아요.
+  document.addEventListener("DOMContentLoaded", function () {
+    const text = `그런데 새로운 방법으로 등장해요. 원격 교육은 일단 기본적으로 매체를 쓰긴 하지만 일단은 매체를 써서 학습자랑 교수자가 떨어져 있는 컨셉이에요. 일반적으로 블렌디드 러닝은 블렌디드 라는게 믹스했다 섞었다는 의미잖아요.
 
 온오프라인을 섞습니다. 근데 뭐냐면 이런 컨셉이에요. 그냥 무조건 섞으면 되냐? 아닙니다.
 
@@ -32,17 +22,28 @@ const text = `그런데 새로운 방법으로 등장해요. 원격 교육은 �
 
 그래서 그런 식으로`;
 
-const container = document.getElementById("typewriter");
-let i = 0;
+    const container = document.getElementById("typewriter");
+    let i = 0;
 
-function typeNext() {
-  if (i < text.length) {
-    // 줄바꿈 문자 처리
-    container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
-    i++;
-    setTimeout(typeNext, 30); // 속도 조절
-  }
-}
+    function typeNext() {
+      if (i < text.length) {
+        container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
+        i++;
+        setTimeout(typeNext, 30);
+      }
+    }
 
-typeNext();
+    typeNext();
+  });
 </script>
+
+<style>
+  #typewriter {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.8;
+    color: black;
+  }
+</style>
