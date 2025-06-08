@@ -6,18 +6,7 @@ categories: jekyll update
 
 
 
-<div id="typewriter" style="height: 200px; overflow: auto; border: 1px solid #ccc; padding: 1rem;"></div>
-
-<style>
-  #typewriter {
-    font-family: 'Courier New', monospace;
-    font-size: 1.2rem;
-    white-space: pre-wrap;
-    word-break: break-word;
-    line-height: 1.8;
-    color: black;
-  }
-</style>
+<div id="typewriter"></div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -36,27 +25,29 @@ categories: jekyll update
 그래서 그런 식으로`;
 
     const container = document.getElementById("typewriter");
-    const lines = text.split('\n'); // 줄 단위로 자름
-    let lineIndex = 0;
-    let charIndex = 0;
+    let i = 0;
 
-    function typeLine() {
-      if (lineIndex >= lines.length) return;
-
-      const line = lines[lineIndex];
-      if (charIndex < line.length) {
-        container.textContent += line[charIndex];
-        charIndex++;
-        container.scrollTop = container.scrollHeight;
-        setTimeout(typeLine, 30);
-      } else {
-        container.textContent += '\n'; // 줄바꿈
-        lineIndex++;
-        charIndex = 0;
-        setTimeout(typeLine, 300); // 줄 간 간격
+    function typeNext() {
+      if (i < text.length) {
+        container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
+        i++;
+        setTimeout(typeNext, 30);
       }
     }
 
-    typeLine();
+    typeNext();
   });
 </script>
+
+<style>
+  #typewriter {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.8;
+    color: black;
+    height: 200px;
+    overflow: auto;
+  }
+</style>
