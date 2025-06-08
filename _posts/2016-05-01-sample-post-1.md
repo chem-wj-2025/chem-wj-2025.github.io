@@ -45,5 +45,7 @@ categories: jekyll update
     word-break: break-word;
     line-height: 1.8;
     color: black;
+    height: 200px;
+    overflow: auto;
   }
 </style>
