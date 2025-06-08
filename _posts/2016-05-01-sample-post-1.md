@@ -26,10 +26,19 @@ categories: jekyll update
     const container = document.getElementById("typewriter");
     let i = 0;
 
-    function typeNext() {
+
+
+        function typeNext() {
       if (i < text.length) {
+        const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 5;
+
         container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
         i++;
+
+        if (isAtBottom) {
+          container.scrollTop = container.scrollHeight; // 자동 스크롤
+        }
+
         setTimeout(typeNext, 30);
       }
     }
