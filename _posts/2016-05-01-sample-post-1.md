@@ -27,18 +27,20 @@ categories: jekyll update
     let i = 0;
 
 
-  function typeNext() {
-    if (i < text.length) {
-      const char = text[i] === '\n' ? '<br>' : text[i];
-      container.innerHTML += char;
-      i++;
+function typeNext() {
+  if (i < text.length) {
+    const char = text[i] === '\n' ? '<br>' : text[i];
+    container.innerHTML += char;
+    i++;
 
-      // 항상 최신 위치로 스크롤 (무조건 강제 스크롤)
-      container.scrollTop = container.scrollHeight;
+    // 항상 강제로 스크롤 (스크롤이 있든 없든 안전)
+    container.scrollTop = container.scrollHeight;
 
-      setTimeout(typeNext, 30);
-    }
+    setTimeout(typeNext, 30);
   }
+}
+
+    
     }
 
     typeNext();
