@@ -4,7 +4,6 @@ title:  "Sample Post - test"
 categories: jekyll update
 ---
 
-
 <div id="typewriter"></div>
 
 <script>
@@ -26,23 +25,19 @@ categories: jekyll update
     const container = document.getElementById("typewriter");
     let i = 0;
 
+    function typeNext() {
+      if (i < text.length) {
+        const char = text[i] === '\n' ? '<br>' : text[i];
+        container.innerHTML += char;
+        i++;
 
-function typeNext() {
-  if (i < text.length) {
-    const char = text[i] === '\n' ? '<br>' : text[i];
-    container.innerHTML += char;
-    i++;
+        container.scrollTop = container.scrollHeight;
 
-    // 항상 강제로 스크롤 (스크롤이 있든 없든 안전)
-    container.scrollTop = container.scrollHeight;
-
-    setTimeout(typeNext, 30);
-  }
-}
-
-    
+        setTimeout(typeNext, 30);
+      }
     }
 
+    // ✅ 이 줄이 함수 안에 있어야 실행됨!
     typeNext();
   });
 </script>
@@ -55,7 +50,9 @@ function typeNext() {
     word-break: break-word;
     line-height: 1.8;
     color: black;
-    height:200px;
-    overflow:auto;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 1rem;
   }
 </style>
