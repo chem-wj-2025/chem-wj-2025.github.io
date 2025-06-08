@@ -23,19 +23,17 @@ categories: jekyll update
 
 그래서 그런 식으로;
 
-    const container = document.getElementById("typewriter");
-    let i = 0;
-
-    function typeNext() {
-      if (i < text.length) {
-        container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
-        i++;
-        setTimeout(typeNext, 30);
-      }
+const container = document.getElementById("typewriter");
+  let i = 0;
+  function typeNext() {
+    if (i < text.length) {
+      container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
+      i++;
+      setTimeout(typeNext, 30);
     }
-
-    typeNext();
-  });
+  }
+  typeNext();
+});
 </script>
 
 <style>
