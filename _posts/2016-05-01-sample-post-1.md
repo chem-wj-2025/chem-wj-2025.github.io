@@ -6,8 +6,7 @@ categories: jekyll update
 
 
 
-<div id="typewriter"><h3>자막</h3>
-</div>
+<div id="typewriter"></div>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const text = 그런데 새로운 방법으로 등장해요. 원격 교육은 일단 기본적으로 매체를 쓰긴 하지만 일단은 매체를 써서 학습자랑 교수자가 떨어져 있는 컨셉이에요. 일반적으로 블렌디드 러닝은 블렌디드 라는게 믹스했다 섞었다는 의미잖아요.
