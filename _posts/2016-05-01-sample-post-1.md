@@ -34,13 +34,11 @@ categories: jekyll update
 
 .typewriter p {
   font-family: 'Courier New', monospace;
-  overflow: hidden;
   border-right: 0.15em solid #ccc;
   white-space: nowrap;
-  width: 0;
+  width: 100%;
   animation:
     typing 3s steps(30, end) forwards,
-    blink 0.7s step-end infinite;
   font-size: 1.2rem;
   color: black;
 }
