@@ -40,7 +40,8 @@ categories: jekyll update
   overflow: hidden;      
   width: 100%;
   animation:
-    typing 3s steps(30, end) forwards
+    typing 5s steps(100, end) forwards,
+    blink 0.75s step-end infinite;
   font-size: 1.2rem;
   color: black;
 }
