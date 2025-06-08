@@ -5,8 +5,10 @@ categories: jekyll update
 ---
 
 
-
-<div id="typewriter_subscript"></div>
+<div>
+  <h2> 자막 </h2>
+  <div id="typewriter_subscript"></div>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -31,7 +33,7 @@ categories: jekyll update
       if (i < text.length) {
         container.innerHTML += text[i] === '\n' ? '<br>' : text[i];
         i++;
-        setTimeout(typeNext, 30);
+        setTimeout(typeNext, 50);
       }
     }
 
@@ -57,9 +59,11 @@ categories: jekyll update
 
 
 
+<div>
+  <h2> 요약 </h2>
+  <div id="typewriter_summary"></div>
+</div>
 
-
-<div id="typewriter_summary"></div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -73,7 +77,7 @@ categories: jekyll update
       if (i < texts.length) {
         container.innerHTML += texts[i] === '\n' ? '<br>' : texts[i];
         i++;
-        setTimeout(typeNext, 300);
+        setTimeout(typeNext, 8000);
       }
     }
 
@@ -92,5 +96,6 @@ categories: jekyll update
     height: 200px;
     overflow: auto;
     border: 1px solid black;
+    margin-top: 20px;
   }
 </style>
