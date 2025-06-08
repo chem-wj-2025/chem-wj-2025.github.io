@@ -4,6 +4,29 @@ title:  "Sample Post - test"
 categories: jekyll update
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non iaculis risus. Phasellus vitae nunc ac lectus finibus porttitor. Sed vel enim vulputate, euismod neque maximus, tincidunt turpis. Aenean accumsan leo eget dui porta pulvinar. Sed tincidunt, nisi non efficitur tempus, enim lectus aliquam arcu, at dignissim ligula ex eu quam. Suspendisse gravida dapibus ultrices. Vivamus convallis nulla nisl, a imperdiet felis pellentesque in. Nulla facilisi. Integer aliquet sed orci eu tempor. Sed viverra ullamcorper commodo.
+<div class="typewriter">
+  <p>Thank you for watching...</p>
+</div>
 
-Morbi vestibulum sem eget maximus feugiat. Curabitur vehicula magna in molestie dignissim. Nam gravida leo non purus cursus, id accumsan justo tincidunt. Donec accumsan purus mauris, vitae luctus magna faucibus vitae. Nullam tincidunt urna scelerisque, hendrerit mi ac, sagittis ligula. Curabitur convallis eros eu fringilla maximus. Donec lobortis scelerisque enim eu molestie. Duis ac mi quis risus auctor vulputate.
+<style>
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.typewriter p {
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  border-right: 0.15em solid white;
+  white-space: nowrap;
+  width: 0;
+  animation:
+    typing 3s steps(30, end) forwards,
+    blink 0.7s step-end infinite;
+  font-size: 1.2rem;
+  color: #f2f2f2;
+}
+</style>
