@@ -37,6 +37,7 @@ categories: jekyll update
   border-right: 0.15em solid #ccc;
   white-space: pre-wrap;
   word-break: break-word; 
+  overflow: hidden;      
   width: 100%;
   animation:
     typing 3s steps(30, end) forwards,
