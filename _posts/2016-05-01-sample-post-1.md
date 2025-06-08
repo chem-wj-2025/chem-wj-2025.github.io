@@ -35,7 +35,8 @@ categories: jekyll update
 .typewriter p {
   font-family: 'Courier New', monospace;
   border-right: 0.15em solid #ccc;
-  white-space: nowrap;
+  white-space: pre-wrap;
+  word-break: break-word; 
   width: 100%;
   animation:
     typing 3s steps(30, end) forwards,
