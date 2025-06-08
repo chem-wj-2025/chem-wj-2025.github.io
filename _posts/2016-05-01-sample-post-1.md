@@ -49,6 +49,7 @@ categories: jekyll update
     color: black;
     height: 200px;
     overflow: auto;
+    border: 1px black;
   }
 </style>
 
@@ -62,7 +63,8 @@ categories: jekyll update
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const texts[] = {'원격 교육은 매체를 활용해 교수자와 학습자가 떨어진 상태에서 진행되며, 블렌디드 러닝은 온라인과 오프라인 학습을 의도적으로 결합하는 방식이다.' '각각의 방식은 되돌려보기, 실시간 상호작용 등 고유한 장점이 있으며, 이를 조화롭게 활용하는 것이 중요하다.'};
+    const texts = ["원격 교육은 매체를 활용해 교수자와 학습자가 떨어진 상태에서 진행되며, 블렌디드 러닝은 온라인과 오프라인 학습을 의도적으로 결합하는 방식이다.",
+                   "각각의 방식은 되돌려보기, 실시간 상호작용 등 고유한 장점이 있으며, 이를 조화롭게 활용하는 것이 중요하다."];
 
     const container = document.getElementById("typewriter_summary");
     let i = 0;
@@ -89,5 +91,6 @@ categories: jekyll update
     color: black;
     height: 200px;
     overflow: auto;
+    border: 1px black;
   }
 </style>
