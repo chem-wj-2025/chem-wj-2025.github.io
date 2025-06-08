@@ -7,7 +7,7 @@ categories: jekyll update
 
 
 <div id="typewriter"></div>
-
+<h3>자막</h3>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const text = `그런데 새로운 방법으로 등장해요. 원격 교육은 일단 기본적으로 매체를 쓰긴 하지만 일단은 매체를 써서 학습자랑 교수자가 떨어져 있는 컨셉이에요. 일반적으로 블렌디드 러닝은 블렌디드 라는게 믹스했다 섞었다는 의미잖아요.
@@ -51,3 +51,73 @@ categories: jekyll update
     overflow: auto;
   }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="typewriter" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 1rem;"></div>
+<h3>요약</h3>
+
+<style>
+  #typewriter {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.8;
+    color: black;
+  }
+
+  .chunk {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const textChunks = [
+'원격 교육은 매체를 활용해 교수자와 학습자가 떨어진 상태에서 진행되며, 블렌디드 러닝은 온라인과 오프라인 학습을 의도적으로 결합하는 방식이다.',
+      '각각의 방식은 되돌려보기, 실시간 상호작용 등 고유한 장점이 있으며, 이를 조화롭게 활용하는 것이 중요하다.'
+    ];
+
+    const container = document.getElementById("typewriter");
+    let currentIndex = 0;
+
+    function showNextChunk() {
+      if (currentIndex < textChunks.length) {
+        const p = document.createElement("p");
+        p.className = "chunk";
+        p.textContent = textChunks[currentIndex];
+        container.appendChild(p);
+        container.scrollTop = container.scrollHeight; // 스크롤 아래로 자동 이동
+        currentIndex++;
+        setTimeout(showNextChunk, 5000); // 5초 간격
+      }
+    }
+
+    showNextChunk(); // 시작
+  });
+</script>
