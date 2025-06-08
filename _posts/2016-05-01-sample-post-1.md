@@ -49,7 +49,7 @@ categories: jekyll update
     color: black;
     height: 200px;
     overflow: auto;
-    border: 1px black;
+    border: 1px solid black;
   }
 </style>
 
@@ -70,8 +70,8 @@ categories: jekyll update
     let i = 0;
 
     function typeNext() {
-      if (i < text.length) {
-        container.innerHTML += texts[i] === '\n' ? '<br>' : text[i];
+      if (i < texts.length) {
+        container.innerHTML += texts[i] === '\n' ? '<br>' : texts[i];
         i++;
         setTimeout(typeNext, 300);
       }
@@ -91,6 +91,6 @@ categories: jekyll update
     color: black;
     height: 200px;
     overflow: auto;
-    border: 1px black;
+    border: 1px solid black;
   }
 </style>
