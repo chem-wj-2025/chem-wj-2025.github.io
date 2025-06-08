@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Sample Post"
+title:  "Sample Post - test"
 categories: jekyll update
 ---
 
